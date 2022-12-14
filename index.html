@@ -4,14 +4,35 @@
 <style>
 #slideshow {
   position: relative;
-  height: 300px;
+  height: 600px;
 }
   
 .slideshow-container{
-  height: 60%;
-  width: 75%;
+  height: 90%;
+  width: 60%;
+  margin: auto;
 }
 
+.slideshow-container img {
+  object-fit: contain;
+}
+/*.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 1s;
+  transition-delay: 0.5s;
+  opacity: 0;
+  display: none;
+}
+
+.slide.active {
+  opacity: 1;
+  display: block;
+}
+*/
 .slide {
   position: absolute;
   top: 0;
@@ -32,10 +53,46 @@
   display: block;
 }
 
+#nav-panel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20%;
+  height: 100%;
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+
+#nav-panel ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#nav-panel li a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+#nav-panel li a:hover {
+  background-color: #555;
+  color: white;
+}
+
 </style>
   <title>Slideshow test</title>
 </head>
 <body>
+<div id="nav-panel">
+  <h1><a href="#">J. Sidney Malone</a><h1>
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</div>
 <div class="slideshow-container">
 <div id="slideshow">
   <div class="slide">
@@ -60,6 +117,25 @@
 </div>
 </body>
 <script>
+  /*
+  var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("slide");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.opacity = 0;
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {
+    slideIndex = 1;
+  }
+  slides[slideIndex - 1].style.opacity = 1;
+  setTimeout(showSlides, 4000);
+}*/
+
+
 var slideIndex = 1;
 showSlides(slideIndex);
 
@@ -80,8 +156,8 @@ function showSlides(n) {
   setInterval(function() {
   plusSlides(1);
 }, 4000);
+
 </script>
 
 </html>
-
 
